@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.cecilia.feelsbook.MainActivity">
+
+    <item
+        android:id="@+id/recordSaveButton"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="recordSaveButton"
+        app:showAsAction="always"></item>
+</menu>

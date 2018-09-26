@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/alfredo-hernandez"
+        title="Alfredo Hernandez">Alfredo Hernandez</a> from
+        <a href="https://www.flaticon.com/"
+        title="Flaticon">www.flaticon.com</a> is licensed by
+        <a href="http://creativecommons.org/licenses/by/3.0/"
+        title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+
+        <item
+            android:id="@+id/sort_All"
+            android:icon="@drawable/all"
+            app:actionViewClass="android.widget.TextView"
+            android:title="All" />
+        <item
+            android:id="@+id/sort_love"
+            android:icon="@drawable/love"
+            app:actionViewClass="android.widget.TextView"
+            android:title="Love" />
+        <item
+            android:id="@+id/sort_joy"
+            android:icon="@drawable/joy"
+            app:actionViewClass="android.widget.TextView"
+            android:title="Joy" />
+        <item
+            android:id="@+id/sort_surprise"
+            android:icon="@drawable/surprised"
+            app:actionViewClass="android.widget.TextView"
+            android:title="Surprise" />
+        <item
+            android:id="@+id/sort_anger"
+            android:icon="@drawable/anger"
+            app:actionViewClass="android.widget.TextView"
+            android:title="Anger" />
+        <item
+            android:id="@+id/sort_sadness"
+            android:icon="@drawable/sadness"
+            app:actionViewClass="android.widget.TextView"
+            android:title="Sadness" />
+        <item
+            android:id="@+id/sort_fear"
+            android:icon="@drawable/fear"
+            app:actionViewClass="android.widget.TextView"
+            android:title="Fear" />
+    </group>
+
+
+</menu>

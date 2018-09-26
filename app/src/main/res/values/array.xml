@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="MoodList">
+        <item>Select your mood 👇️</item>
+        <item>❤️ love</item>
+        <item>😊 joy</item>
+        <item>😺 surprise</item>
+        <item>😠 anger</item>
+        <item>😒 sadness</item>
+        <item>😨 fear</item>
+    </string-array>
+</resources>

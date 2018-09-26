@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@drawable/side_nav_bar"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:contentDescription="@string/nav_header_desc"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        app:srcCompat="@drawable/user" />
+
+    <!-- <div>Iconos diseñados por <a href="http://www.freepik.com"
+        title="Freepik">Freepik</a> desde <a href="https://www.flaticon.es/"
+        title="Flaticon">www.flaticon.com</a> con licencia
+        <a href="http://creativecommons.org/licenses/by/3.0/"
+        title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        Where you can use Flaticon contents:
+        • Website
+        • Software, applications, mobile, Multimedia
+        • Printed and digital media (magazines, newspapers, books, cards, labels, CD, television, video, e-mail)
+        • Advertisement and promotional items
+        • Presentation of products and public events
+     -->
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:text="Cecilia Wei"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ceciliawei@yahoo.com" />
+
+</LinearLayout>
