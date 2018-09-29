@@ -22,7 +22,8 @@ import java.util.Date;
 
 public class AddRecordActivity extends AppCompatActivity {
     Spinner mood;
-    EditText date;
+    DatePicker date;
+    TimePicker time;
     EditText comment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +57,10 @@ public class AddRecordActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
 
-        Spinner mood = (Spinner)findViewById(R.id.mood_hint);
-        DatePicker date = findViewById(R.id.date_hint);
+        mood = (Spinner)findViewById(R.id.mood_hint);
+        date = findViewById(R.id.date_hint);
 
-        TimePicker time = findViewById(R.id.time_hint);
+        time = findViewById(R.id.time_hint);
         time.setIs24HourView(true);
 
         comment = findViewById(R.id.comment_hint);
