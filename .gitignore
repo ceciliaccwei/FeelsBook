@@ -1,5 +1,4 @@
 # Built application files
-*.apk
 *.ap_
 
 # Files for the ART/Dalvik VM
@@ -63,3 +62,12 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
