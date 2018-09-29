@@ -22,7 +22,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
         this.records = records;
     }
-
+    // adapte each record card
     @Override
     public MainAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
@@ -41,7 +41,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // click on the card view to see the detail of the record
                 Record toView = records.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putString("mood",toView.getMood());
@@ -64,6 +64,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        // set the text for each record card
 
         public TextView mood;
         public TextView date;

@@ -1,3 +1,5 @@
+package com.example.cecilia.FeelsBook;
+
 /*
    Original code Copyright (c) 2017 Wenxi Zeng[1]
    Modified code Copyright (c) 2018 Cecilia Wei
@@ -15,9 +17,7 @@
 /*
    Modified: line 43 custom button size
  */
-
-
-package com.example.cecilia.FeelsBook;
+// control swipe option
 
 import android.content.Context;
 import android.graphics.Canvas;

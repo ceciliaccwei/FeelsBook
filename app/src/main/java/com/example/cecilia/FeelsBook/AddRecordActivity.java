@@ -20,6 +20,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// Add a new record to the database, including mood, date-time and optional comment.
 public class AddRecordActivity extends AppCompatActivity {
     Spinner mood;
     DatePicker date;
@@ -40,6 +41,7 @@ public class AddRecordActivity extends AppCompatActivity {
         mood.setAdapter(spinAdp);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources()
                 .getColor(R.color.ViewContentColor)));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
     @Override
@@ -73,11 +75,17 @@ public class AddRecordActivity extends AppCompatActivity {
         String recordDate = dateFormatter.format(selectedDate);
 
         String recordComment = comment.getText().toString();
-        //noinspection SimplifiableIfStatement
+        // if clicked the save button,
+        if (id == android.R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
        if (id == R.id.recordSaveButton) {
+           // if the mood if not empty,  save the record to the database
            if (!recordMood.equals("Select your mood \uD83D\uDC47️")) {
                Record record = new Record(recordMood, recordDate, recordComment);
                db.recordDAO().insertAll(record);
+               // toast
                Toast.makeText(this, "Record Saved", Toast.LENGTH_SHORT).show();
                startActivity(new Intent(AddRecordActivity.this, MainActivity.class));
                return true;

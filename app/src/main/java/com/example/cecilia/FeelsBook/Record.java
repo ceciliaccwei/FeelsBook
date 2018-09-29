@@ -5,6 +5,9 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
+// model RECORD
+// attributes: mood, date, comment
+// private and autogenerating id
 public class Record {
     public Record(String mood, String date, String comment) {
         this.mood = mood;

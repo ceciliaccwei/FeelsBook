@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView.LayoutManager mLayoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // create navigation drawer(total counter)
+        // create recyclerView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -81,6 +83,7 @@ public class MainActivity extends AppCompatActivity
         /*Changes
         got color string from color resource file
         completed onClick functions to edit and delete
+        comment added
          */
 
         /* **************************************************************************************************** */
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity
                         new UnderlayButtonClickListener() {
 
                             public void onClick(int position) {
+                                // if clicked the delete button, delete the current record
                                 Record record = records.get(position);
                                 Toast.makeText(MainActivity.this, "Record deleted", Toast.LENGTH_SHORT).show();
                                 db.recordDAO().deleteAll(record);
@@ -104,6 +108,7 @@ public class MainActivity extends AppCompatActivity
                         new UnderlayButtonClickListener() {
                             @Override
                             public void onClick(int pos) {
+                                // if clicked the edit button, allow user to eit the current record
                                 Record record = records.get(pos);
                                 Bundle bundle = new Bundle();
                                 bundle.putInt("id",record.getId());
@@ -123,6 +128,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
+    // drawer action
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -132,30 +138,10 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        // click the item in navigation drawer to view each category.
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         final AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"FeelsBook")
@@ -203,6 +189,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
     public void SetNavigationText(AppDatabase db,NavigationView navigationView){
+        // count the num of each emotion
         TextView countAll = (TextView) MenuItemCompat.getActionView(navigationView.getMenu().findItem(R.id.sort_All));
         countAll.setGravity(Gravity.CENTER_VERTICAL);
         countAll.setText(String.valueOf(db.recordDAO().getAllRecords().size()));

@@ -22,7 +22,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+// Edit existing record and update the record in the database
+// set the starting spinner to be RECORDMOOD
+// set the date time to be the RECORDTIME
+// set the text in the editextView as RECORDCOMMENT
 public class EditRecordActivity extends AppCompatActivity {
     Spinner mood;
     EditText date;
@@ -31,7 +34,9 @@ public class EditRecordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_record);
-
+        // when starting the activity, we put the info of the RECORD
+        // as extra.
+        // Retrieving the extras from BUNDLE
         Bundle bundle = null;
         bundle = this.getIntent().getExtras();
         String MOOD = bundle.getString("mood");
@@ -48,11 +53,13 @@ public class EditRecordActivity extends AppCompatActivity {
             }
 
         }
+        // Set adapter for spinner
         ArrayAdapter<String> spinAdp = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,MOODLIST);
         spinAdp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mood.setAdapter(spinAdp);
 
+        // get the record date
         int Year_origin = Integer.valueOf(DATE.substring(0,4));
         int Month_origin = Integer.valueOf(DATE.substring(5,7))-1;
         int Day_origin = Integer.valueOf(DATE.substring(8,10));
@@ -68,11 +75,12 @@ public class EditRecordActivity extends AppCompatActivity {
         time.setCurrentHour(Hour_origin);
         time.setCurrentMinute(Min_origin);
 
+
         TextView USERCONTEXT = (TextView) findViewById(R.id.comment_hint);
         USERCONTEXT.setText(COMMENT);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources()
                 .getColor(R.color.ViewContentColor)));
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
     @Override
@@ -109,6 +117,10 @@ public class EditRecordActivity extends AppCompatActivity {
         Bundle bundle = this.getIntent().getExtras();
         int recordID = bundle.getInt("id");
         //noinspection SimplifiableIfStatement
+        if (id == android.R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
         if (id == R.id.recordSaveButton) {
             Record record = db.recordDAO().findById(recordID);
             record.setMood(recordMood);
